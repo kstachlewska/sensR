@@ -10,7 +10,7 @@
 \usage{
 betabin(data, start = c(.5,.5),
         method = c("duotrio", "tetrad", "threeAFC", "twoAFC",
-          "triangle"),
+          "triangle", "twofive", "twofiveF", "hexad"),
         vcov = TRUE, corrected = TRUE, gradTol = 1e-4, ...)
 
 \method{summary}{betabin}(object, level = 0.95, ...)
