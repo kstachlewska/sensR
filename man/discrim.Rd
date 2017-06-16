@@ -53,7 +53,7 @@ discrim(correct, total, d.prime0, pd0, conf.level = 0.95,
 %%%   \item{hess}{logical, should the hessian be computed? (requires for
 %%%     standard errors etc. to be computed by summary.discrimr)}
   \item{conf.level}{the confidence level for the confidence intervals}
-  \item{method}{the discrimination protocol. Five allowed values:
+  \item{method}{the discrimination protocol. Eight allowed values:
     "twoAFC", "threeAFC", "duotrio", "tetrad", "triangle", "twofive", 
     "twofiveF", "hexad"}
   \item{test}{the type of test}

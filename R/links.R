@@ -428,9 +428,9 @@ twofiveF <- function()
   twofiveF <- binomial()
   twofiveF$link <- "Link for the Two-Out-of-Five with forgiveness test"
   twofiveF$linkinv <- function(eta) {
-    ok <- eta > 0 & eta < 5.3
-    eta[eta <= 0] <- 1/10
-    eta[eta >= 5.3] <- 1
+    ok <- eta > 0 & eta < 4.333
+    eta[eta <= 0] <- 2/5
+    eta[eta >= 4.333] <- 1
     if(sum(ok))
       eta[ok] <-
       sapply( eta[ok], function(x) x^c(0:10) %*% c(0.399966014, 0.001859461, 0.194649607, 0.021530254, -0.053426287, 0.004419745,
@@ -438,9 +438,9 @@ twofiveF <- function()
     pmin(pmax(eta, 2/5), 1) ## restrict to [2/5, 1] - just to be sure
   }
   twofiveF$mu.eta <- function(eta) {
-    ok <- eta > 0 & eta < 5.3
+    ok <- eta > 0 & eta < 4.333
     eta[eta <= 0] <- 0
-    eta[eta >= 5.3] <- 0
+    eta[eta >= 4.333] <- 0
     if(sum(ok)) {
       d <- eta[ok]
       eta[ok] <- sapply( d, function(x) x^c(0:9) %*% c(0.001859461, 0.389299214, 0.064590762, -0.213705148, 0.022098725,
@@ -456,7 +456,7 @@ twofiveF <- function()
     if(sum(ok)) {
       twofiveFg2 <- function(d, p) twofiveF$linkinv(d) - p
       mu[ok] <- sapply(mu[ok], function(mu)
-        uniroot(twofiveFg2, c(0, 5.3), p = mu)$root)
+        uniroot(twofiveFg2, c(0, 4.333), p = mu)$root)
     }
     mu
   }
